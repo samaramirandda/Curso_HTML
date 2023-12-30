@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<!-- A ordem dos comandos importa!  -->
+
+<head>
+    <title>Teste JavaScript</title>
+    <!-- Para resolver problemas de acentuação -->
+    <meta charset="UTF-8"/>
+
+    <script>
+        var quebrada = false;
+
+        function mudaLampada(tipo){
+           
+            if(!quebrada){
+
+                // o tipo está entre "+" pois vai ser alterado conforme o resultado
+                document.getElementById("luz").src =  "_imagens/" + tipo + ".jpg"; 
+                
+                if(tipo== 'lampada-quebrada'){
+                    quebrada = true;
+                }
+                
+        }
+            // Manipular elementos atraves do id
+            // Substitui pela imagem nova que eu quero
+        }
+
+    </script>
+</head>
+
+<body>
+    <h1>Acenda a lâmpada</h1>
+    <!-- Para alterar um objeto, a primeira coisa que deve ser feita é dar um id -->
+    <img src="_imagens/lampada-apagada.jpg" id="luz" onmousemove="mudaLampada('lampada-acesa')" onmouseout="mudaLampada('lampada-apagada')" onclick="mudaLampada('lampada-quebrada')"/>
+
+    <!-- Semantica de JavaScript -->
+</body>
+
+</html>

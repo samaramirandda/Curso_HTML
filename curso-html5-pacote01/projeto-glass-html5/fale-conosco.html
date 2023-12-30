@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<!-- Idioma do site -->
+<html lang = "pt-br">
+
+<!-- Head faz as configurações comportamentais -->
+<head>
+    <!-- Correção de acentos -->
+    <meta charset="UTF-8"/>
+
+    <!-- Titulo do site -->
+    <title> Google Glass </title>
+    <!-- Link com o documento css -->
+    <link rel="stylesheet" href="_css/estilo.css"/>
+    <link rel="stylesheet" href="_css/form.css"/>
+    
+    <script>
+        function calc_total(){
+            // parseInt serve para converter o valor 
+            var qtd = parseInt(document.getElementById('cQtd').value);
+            tot = qtd * 1500;
+            document.getElementById('tTot').value = tot;
+        }
+    </script>
+</head>
+
+<!-- Chamar o arquivo javascript -->
+<script language="javascript" src="_javascript/funcoes.js"></script>
+
+<!-- Todo corpo do site -->
+<body>
+    <!-- Div é um container, tem posição relativa -->
+    <div id="interface">
+
+        <header id="cabecalho">
+            <!-- Colocar textos do mesmo grupo dentro de "hgroup" -->
+            <hgroup>
+                <!-- Tag "b" significa bold -->
+            <h1> <b>Google Glass</b>  </h1>
+            <h2> A revolução do Google está chegando</h2>
+            </hgroup>
+        
+        <!-- Tag de imagens -->
+        
+        <!-- usar id ajuda a configurar o estilo css -->
+        <img id="icone" src="_imagens/glass-oculos-preto-peq.png">
+        
+        <!-- Menu de navegação -->
+        <!-- Posição absoluta -->
+        <nav id="menu">
+            <h1>Menu Principal</h1>
+            <ul>
+                <!-- Sempre que eu mover o mouse sobre  a opção home o icone vai ser modificado -->
+                <li onmouseover="mudaFoto('_imagens/home.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="index.html">Home</a></li>
+                <li onmouseover="mudaFoto('_imagens/especificacoes.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="specs.html"> Especificações</a></li>
+                <li onmouseover="mudaFoto('_imagens/fotos.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="fotos.html"> Fotos</a></li>
+                <li onmouseover="mudaFoto('_imagens/multimidia.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="multimidia.html"> Multimídia</a></li>
+                <li onmouseover="mudaFoto('_imagens/contato.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="fale-conosco.html"> Fale conosco</a></li>
+            </ul>
+        </nav>
+        </header>
+
+        <section id="corpo-full">   
+            <article id="noticia-principal">
+                <header id="cabecalho-artigo">
+                    <hgroup>
+                        <h3>Fale Conosco > Contato</h3>
+                        <h1>Formulário de Contato</h1>
+                        <h2>por Gustavo Guanabara</h2>
+                        <h3 class="Atualizado em 01/Maio/2013"></h3>
+                    </hgroup>
+                </header>
+            </article>
+        </section>
+        
+        <!-- Metodo get é mais rapido porem menos seguro, e post é mais seguro e mais lento -->
+        <form method="post" id="fContato" action="mailto:contato@cursoemvideocom" oninput="calc_total()">
+            <fieldset id="usuario">
+                <legend>Identificação do Usuário</legend>
+                <!-- Caixa de texto -->
+                <p><label for="cNome"> Nome:</label> <input type="text" name="tNome" id="cNome" size="20" maxlength="30" placeholder="Nome completo"/> </p>
+                <p>Senha: <input type="password" name="tSenha" id="cSenha" size="8" maxlength="8" placeholder="8 dígitos"/> </p>
+                <p>E-mail: <input type="email name=tEmail" id="cEmail" size="30" maxlength="40" placeholder="1234@hotmail.com" </p> 
+
+                <!-- Seleção de sexo -->
+                <!-- Ao usar a tag label não delimitamos o click apenas ao circulo, mas o usuario pode clicar no nome para selecionar a opção -->
+                <fieldset id="sexo"> <legend>Sexo</legend>
+                    <input type="radio" name="tSex" id="cMasc" checked/> <label for="cMasc"> Masculino</label><br/>
+                    <input type="radio" name="tSex" id="cFem"/> <label for="cFem"> Feminino</label>
+                </fieldset>
+                <p>Data de Nascimento: <input type="date" name="tData" id="cData"/> </p>    
+            </fieldset>
+
+            <fieldset id="endereco">
+                <legend>Endereço do Usuário</legend> 
+                    <p><label> Logradouro: <input type="text" name="tRua" id="cRua" size="13" maxlength="80" placeholder="Rua,Av,Trav"/> </label></p> 
+                    <p><label>Número: <input type="number" name="tNum" id="cNum" min="0" max="10000" placeholder="123456"/></label></p>
+                    <p><label>Estado:</label>
+                        <select name="tEst" id="cEst">
+                            <optgroup label="Regiao Sudeste">
+                                <option>Rio de Janeiro</option>
+                                <option>São Paulo</option>
+                                <option>Minas Gerais</option>
+                            </optgroup>
+                            <optgroup label="Regiao Nordeste">
+                                <option selected>Bahia</option>
+                            </optgroup>
+                        </select>
+                    </p>
+                    <p><label for="cCity">Cidade:</label> 
+                        <!-- A tag list permite que enquanto o usuario digite, as opções apareçam pra completar -->
+                        <input type="text" name="tCity" id="cCity" size="30" maxlength="20" placeholder="Salvador" list="cidades"/></p>     
+                        <datalist id="cidades">
+                            <option value="Salvador"></option>
+                            <option value="São Sebastião"></option>
+                            <option value="Lauro de Freitas"></option>
+                            <option value="Chapada Diamantina"></option>
+                        </datalist>
+            </fieldset>
+            
+            <fieldset id="mensagem">
+                <legend>Mensagem do Usuário</legend>
+                <p><label for="cUrg"> Grau de Urgência:</label>
+                Min<input type="range" name="tUrg" id="cUrg" min="0" max="10" step="2"/>Max</p>
+                <p><label for="cMsg"> Mensagem:</label>
+                <textarea name="tMsg" id="cMsg" cols="35" rows="5" placeholder="Deixe aqui a sua mensagem!"></textarea></p>
+            </fieldset>
+            
+            <fieldset id="pedido">
+                <legend>Quero um Google Glass</legend>
+                    <p>
+                        <input type="checkbox" name="tPed" id="cPed" checked/>
+                        <label for="cPed">Gostaria de adquirir um Google Glass quando disponível</label>
+                    </p>
+                    <p>
+                        <input type="color" name="tCor" id="cCor" value="0000FF"/>
+                        <label for="cCor">Cor:</label>
+                    </p>
+                    <p>
+                        <input type="number" name="tQtd" id="cQtd" min="0" max="5" value="0"/>
+                        <label for="cQtd">Quantidade:</label>
+                    </p>
+                    <p>
+                        <input type="text" name="tTot" id="cTot" placeholder="Total a Pagar" readonly/>
+                        <label for="cPrice">Preço Total: R$</label>
+                    </p>
+            </fieldset>
+            
+            <input type="image" src="_imagens/botao-enviar.png" name="tImg" id="cImg"/>
+        </form>
+
+        <!-- É o rodapé da página ou do conteúdo específico. -->
+        <footer id="rodape">
+            <!-- br cria um break-flow -->
+            <p> Copyright 2013 &copy;  - by Gustavo Guanabara<br>
+            <a href="http://facebook.com/cursoemvideo">Facebook</a>
+            <a href="http://twitter.com/cursoemvideo">Twitter</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

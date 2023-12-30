@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<!-- Idioma do site -->
+<html lang = "pt-br">
+
+<!-- Head faz as configurações comportamentais -->
+<head>
+    <!-- Correção de acentos -->
+    <meta charset="UTF-8"/>
+
+    <!-- Titulo do site -->
+    <title> Google Glass </title>
+    <!-- Link com o documento css -->
+    <link rel="stylesheet" href="_css/estilo.css"/>
+    <link rel="stylesheet" href="_css/specs.css"/>
+</head>
+
+<!-- Chamar o arquivo javascript -->
+<script language="javascript" src="_javascript/funcoes.js"></script>
+
+<!-- Todo corpo do site -->
+<body>
+    <!-- Div é um container, tem posição relativa -->
+    <div id="interface">
+
+        <header id="cabecalho">
+            <!-- Colocar textos do mesmo grupo dentro de "hgroup" -->
+            <hgroup>
+                <!-- Tag "b" significa bold -->
+            <h1> <b>Google Glass</b>  </h1>
+            <h2> A revolução do Google está chegando</h2>
+            </hgroup>
+        
+        <!-- Tag de imagens -->
+        
+        <!-- usar id ajuda a configurar o estilo css -->
+        <img id="icone" src="_imagens/especificacoes.png">
+        
+        <!-- Menu de navegação -->
+        <!-- Posição absoluta -->
+        <nav id="menu">
+            <h1>Menu Principal</h1>
+            <ul>
+                <!-- Sempre que eu mover o mouse sobre  a opção home o icone vai ser modificado -->
+                <li onmouseover="mudaFoto('_imagens/home.png')" onmouseout="mudaFoto('_imagens/especificacoes.png')"><a href="index.html">Home</a></li>
+                <li onmouseover="mudaFoto('_imagens/especificacoes.png')" onmouseout="mudaFoto('_imagens/especificacoes.png')"><a href="specs.html"> Especificações</a></li>
+                <li onmouseover="mudaFoto('_imagens/fotos.png')" onmouseout="mudaFoto('_imagens/especificacoes.png')"><a href="fotos.html"> Fotos</a></li>
+                <li onmouseover="mudaFoto('_imagens/multimidia.png')" onmouseout="_imagens/especificacoes.png"><a href="multimidia.html"> Multimídia</a></li>
+                <li onmouseover="mudaFoto('_imagens/contato.png')" onmouseout="mudaFoto('_imagens/especificacoes.png')"><a href="fale-conosco.html"> Fale conosco</a></li>
+            </ul>
+        </nav>
+        </header>
+
+    <section id="corpo-full">   
+        <article id="noticia-principal">
+
+            <header id="cabecalho-artigo">
+                <hgroup>
+                    <h3> Glass > Especificações</h3>
+                    <h1>Raio-X no Google Glass</h1>
+                    <h2>por Gustavo Guanabara</h2>
+                    <h3 class="Atualizado em 01/Maio/2013"></h3>
+                </hgroup>
+            </header>
+            
+            <p> 
+                Clique em qualquer área destacada da imagem para ter mais informações sobre os recursos do Google Glass.
+                Qualquer ponto vermelho vai te levar a um lugar cheio de novas informações.
+            </p>
+
+            <section id="conteudo">
+                <img src="_imagens/glass-esquema-marcado.jpg" usemap="#mapa">
+                <!-- Mapa de imagem -->
+                <map name="mapa">
+                    <!-- Formato da area, coordenadas, arquivo a ser aberto e o alvo(onde o arquivo será aberto) -->
+                    <area shape="rect" coords="187,210,270,260" href="google-glass.html#tela" target="janela"/>
+                    <!-- area horizontal, vertical e raio -->
+                    <area shape="circle" coords="150,236,12" href="google-glass.html#camera" target="janela"/>
+                    <area shape="circle" coords="78,48,12" href="google-glass.html#bateria" target="janela"/>
+                    <area shape="poly" coords="27,144,80,216,84,249,27,169" href="google-glass.html#sensores" target="janela"/>
+                </map>
+                <!-- A tag Iframe serve pra carregar outro arquivo -->
+                <iframe src="google-glass.html" name="janela" id="frame-specs"></iframe>
+            </section>
+        </article>
+    </section>
+    
+    
+    <!-- É o rodapé da página ou do conteúdo específico. -->
+    <footer id="rodape">
+        <!-- br cria um break-flow -->
+        <p> Copyright 2013 &copy;  - by Gustavo Guanabara<br>
+        <a href="http://facebook.com/cursoemvideo">Facebook</a>
+        <a href="http://twitter.com/cursoemvideo">Twitter</a>
+        </p>
+        </div>
+    </footer>
+</body>
+</html>

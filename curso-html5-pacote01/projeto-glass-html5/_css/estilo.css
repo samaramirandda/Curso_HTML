@@ -1,0 +1,271 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200&display=swap');
+/* Usar fonte personalizada */
+@font-face {
+    font-family: 'FonteLogo' ;
+    src: url("../_fonts/bubblegum-sans-regular.otf");
+    
+}
+
+body{
+    background-color:#dddddd;
+    /* rgba tem transparencia */
+    color: rgba(0, 0,0,1);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+div#interface{
+
+    width: 900px;
+    background-color: #ffffff;
+    /* pra centralizar, trabalhamos com as margens */
+    /* encima,direita,embaixo,esquerda */
+    margin: -20px auto 0px auto;
+    /* sombra em volta do objeto */
+    /* deslocamento vertical, horizontal, espalhamento da sombra e cor */
+    box-shadow: 0px 0px 10px rgba(0, 0,0,0.5);
+    padding: 10px;
+}
+
+p{
+    /* Alinha o fim de cada linha  */
+    text-align: justify;
+    text-indent: 50px;
+}
+
+/* Formatação generica para links */
+a {
+    color: #606060;
+    text-decoration: none;
+}
+
+a:hover{
+    /* Quando passamos o mouse no link aparece uma linha */
+    text-decoration: underline;
+}
+
+header#cabecalho img#icone{
+    position: absolute;
+    left: 1050px;
+    top: 70px;
+}
+
+header#cabecalho{
+    /* comando pra traçar uma linha no cabeçalho */
+    border-bottom: 1px #606060 solid;
+    height: 150px;
+    background: url("../_imagens/glass-logo-peq.jpg") no-repeat 10px 80px;
+}
+
+header#cabecalho h1{
+    font-family: FonteLogo, sans-serif;
+    font-size: 30pt;
+    color: #606060;
+    text-shadow: 1px 1px 1px rgba(0, 0,0,0.6);
+    padding: 0px;
+}
+
+header#cabecalho h2{
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 10pt;
+    color: #888888;
+    margin-top: -20px;
+}
+
+figure.foto-legenda{
+    position:  relative;
+    border: 8px solid white;
+    box-shadow: 1px 1px 4px black;
+}
+
+figure.foto-legenda img{
+    /* Altura */
+    width: 100%;
+    /* Largura */
+    height: 100%;
+}
+
+figure.foto-legenda figcaption {
+    opacity: 0;
+    position: absolute;
+    top: 0%;
+    background-color: rgba(0, 0,0,0.3);
+    color: white;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: opacity 1s;
+}
+
+/* classe especifica pra quando passar o mouse por cima */
+figure.foto-legenda:hover figcaption{
+    opacity: 1;
+}
+
+/* quando minha tag tem id eu uso o "#" */
+nav#menu ul{
+    /* um bloco pode flutuar pela tela  */
+    display: block;
+}
+
+nav#menu ul {
+    /* remover as bolinhas da lista */
+    list-style: none;
+    text-transform: uppercase;
+    /* a posição absoluta me permite movimentar a caixa por todo o site,  */
+    /* ja a relativa mantem a caixa presa num espaço delimitado */
+    position: absolute;
+    top: -30px;
+    left: 500px;
+}
+
+nav#menu li{
+    /* por os itens horizontalmente */
+    display: inline-block;
+    background-color: #dddddd;
+    /* padding é o espaço de dentro do objeto  */
+    padding: 10px;
+    /* espaçamento entre os objetos  */
+    margin: 10px;
+    transition: background-color 1s;
+}
+
+/* O hover é usado para quando passar o mouse, criar efeito */
+nav#menu li:hover{
+    background-color: #606060
+}
+
+nav#menu a {
+    color: black;
+    /* Tirar o sublinhado */
+    text-decoration: none;
+}
+
+nav#menu a:hover{
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+nav#menu h1{
+    display:none;
+}
+
+section#corpo {
+    /* Mostrado como um bloco */
+    display: block;
+    /* largura */
+    width: 500px;
+    /* A section vai flutuar pelo lado esquerdo  */
+    float: left;
+    border-right: 1px solid #606060;
+    padding-right: 15px;
+}
+
+article#noticia h2{
+    font-size: 13pt;
+    color: #606060;
+    background-color: #dddddd;
+    padding: 5px 0px 5px 10px;
+    margin: 10px 0px 10px 0px;
+}
+
+header#cabecalho-artigo h1{
+    font-family: 'FonteLogo',sans-serif;
+    font-size: 20pt;
+    color:#606060;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+header#cabecalho-artigo h2{
+    font-size: 13pt;
+    color: #cecece;
+    background-color: #ffffff;
+    margin: 0px;
+}
+
+header#cabecalho-artigo h3{
+    font-size: 12pt;
+    color: #606060;
+}
+
+.direita{
+    text-align: right;
+}
+table#tabela {
+    border: 1px solid #606060;
+    /* Espaço entre as celulas */
+    border-spacing: 0px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table#tabela td {
+    border: 1px solid #606060;
+    padding: 10px; 
+    text-align: center;
+}
+
+/* Usamos o "." para especificar a classe */
+table#tabela td.ce{
+    color: #ffffff;
+    background-color: #606060;
+    vertical-align: top;
+    font-weight: bold;
+}
+
+table#tabela td.cd{
+    background-color: #cecece;
+}
+
+table#tabela caption{
+    color: #888888;
+    font-size: 13pt;
+    font-weight: bolder;
+}
+
+table#tabela caption span{
+    /* O texto vai se desconectar do resto */
+    display: block;
+    float: right;
+    color: #000000;
+    font-size: 8pt;
+    margin-top: 10px;
+}
+
+aside#lateral{
+    display: block;
+    width: 350px;
+    /* Antes de usar o float devemos configurar o display como bloco */
+    float: right;
+    background-color: #dddddd;
+    padding: 10px;
+    margin-top: 10px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+aside#lateral h1{
+    font-family: 'FonteLogo', sans serif;
+    font-size: 20pt;
+    color: #606060;
+    margin-top: 0px;
+}
+
+aside#lateral h2{
+    background-color: #606060;
+    font-size: 13pt;
+    color: #ffffff;
+    padding: 5px;
+}
+
+footer#rodape{
+    /* O rodape fica fora da divisão que tem encima */
+    clear: both;
+    border-top: 1px solid #606060;
+}
+
+footer#rodape p{
+    text-align: center;
+}
+
